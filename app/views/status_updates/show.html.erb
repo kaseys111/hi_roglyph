@@ -26,3 +26,32 @@
     </div>
   </div>
 </div>
+
+<!-- A Status update has many status_comments -->
+
+<div class="row">
+  <div class="col-md-12">
+    <ul class="list-group">
+      <li class="list-group-item list-group-item-info">
+        Status_comments
+      </li>
+
+      <% @status_update.status_comments.each do |status_comment| %>
+        <li class="list-group-item">
+          <a href="/status_comments/<%= status_comment.id %>">
+            <%= status_comment.status_id %>
+          </a>
+          <a href="/status_comments/<%= status_comment.id %>" class="btn btn-primary">
+            Show
+          </a>
+          <a href="/status_comments/<%= status_comment.id %>/edit" class="btn btn-warning">
+            Edit
+          </a>
+          <a href="/delete_status_comment/<%= status_comment.id %>" class="btn btn-danger" rel="nofollow">
+            Delete
+          </a>
+        </li>
+      <% end %>
+    </ul>
+  </div>
+</div>

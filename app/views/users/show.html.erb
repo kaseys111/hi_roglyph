@@ -32,3 +32,119 @@
     </div>
   </div>
 </div>
+
+<!-- A User has many friends__user_is_friender -->
+
+<div class="row">
+  <div class="col-md-12">
+    <ul class="list-group">
+      <li class="list-group-item list-group-item-info">
+        Friends__user_is_friender
+      </li>
+
+      <% @user.friends__user_is_friender.each do |friend_request| %>
+        <li class="list-group-item">
+          <a href="/friend_requests/<%= friend_request.id %>">
+            <%= friend_request.request_sender_id %>
+          </a>
+          <a href="/friend_requests/<%= friend_request.id %>" class="btn btn-primary">
+            Show
+          </a>
+          <a href="/friend_requests/<%= friend_request.id %>/edit" class="btn btn-warning">
+            Edit
+          </a>
+          <a href="/delete_friend_request/<%= friend_request.id %>" class="btn btn-danger" rel="nofollow">
+            Delete
+          </a>
+        </li>
+      <% end %>
+    </ul>
+  </div>
+</div>
+
+<!-- A User has many friends__user_is_friended -->
+
+<div class="row">
+  <div class="col-md-12">
+    <ul class="list-group">
+      <li class="list-group-item list-group-item-info">
+        Friends__user_is_friended
+      </li>
+
+      <% @user.friends__user_is_friended.each do |friend_request| %>
+        <li class="list-group-item">
+          <a href="/friend_requests/<%= friend_request.id %>">
+            <%= friend_request.request_sender_id %>
+          </a>
+          <a href="/friend_requests/<%= friend_request.id %>" class="btn btn-primary">
+            Show
+          </a>
+          <a href="/friend_requests/<%= friend_request.id %>/edit" class="btn btn-warning">
+            Edit
+          </a>
+          <a href="/delete_friend_request/<%= friend_request.id %>" class="btn btn-danger" rel="nofollow">
+            Delete
+          </a>
+        </li>
+      <% end %>
+    </ul>
+  </div>
+</div>
+
+<!-- A User has many status_updates -->
+
+<div class="row">
+  <div class="col-md-12">
+    <ul class="list-group">
+      <li class="list-group-item list-group-item-info">
+        Status_updates
+      </li>
+
+      <% @user.status_updates.each do |status_update| %>
+        <li class="list-group-item">
+          <a href="/status_updates/<%= status_update.id %>">
+            <%= status_update.status %>
+          </a>
+          <a href="/status_updates/<%= status_update.id %>" class="btn btn-primary">
+            Show
+          </a>
+          <a href="/status_updates/<%= status_update.id %>/edit" class="btn btn-warning">
+            Edit
+          </a>
+          <a href="/delete_status_update/<%= status_update.id %>" class="btn btn-danger" rel="nofollow">
+            Delete
+          </a>
+        </li>
+      <% end %>
+    </ul>
+  </div>
+</div>
+
+<!-- A User has many status_comments -->
+
+<div class="row">
+  <div class="col-md-12">
+    <ul class="list-group">
+      <li class="list-group-item list-group-item-info">
+        Status_comments
+      </li>
+
+      <% @user.status_comments.each do |status_comment| %>
+        <li class="list-group-item">
+          <a href="/status_comments/<%= status_comment.id %>">
+            <%= status_comment.status_id %>
+          </a>
+          <a href="/status_comments/<%= status_comment.id %>" class="btn btn-primary">
+            Show
+          </a>
+          <a href="/status_comments/<%= status_comment.id %>/edit" class="btn btn-warning">
+            Edit
+          </a>
+          <a href="/delete_status_comment/<%= status_comment.id %>" class="btn btn-danger" rel="nofollow">
+            Delete
+          </a>
+        </li>
+      <% end %>
+    </ul>
+  </div>
+</div>
