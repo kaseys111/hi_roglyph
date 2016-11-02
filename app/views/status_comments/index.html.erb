@@ -19,7 +19,7 @@
       <tr>
         <td><%= status_comment.status.status %></td>
         <td><%= status_comment.comment %></td>
-        <td><%= status_comment.commenter_id %></td>
+        <td><%= status_comment.commenter.email %></td>
         <td>
           <a href="/status_comments/<%= status_comment.id %>" class="btn btn-primary">Show</a>
           <a href="/status_comments/<%= status_comment.id %>/edit" class="btn btn-warning">Edit</a>
