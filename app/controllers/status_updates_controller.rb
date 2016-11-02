@@ -10,7 +10,7 @@ class StatusUpdatesController < ApplicationController
   end
 
   def index
-    @status_updates = StatusUpdate.all
+    @status_updates = StatusUpdate.page(params[:page])
   end
 
   def show

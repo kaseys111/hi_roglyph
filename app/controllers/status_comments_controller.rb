@@ -10,7 +10,7 @@ class StatusCommentsController < ApplicationController
   end
 
   def index
-    @status_comments = StatusComment.all
+    @status_comments = StatusComment.page(params[:page])
   end
 
   def show
