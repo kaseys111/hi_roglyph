@@ -1,4 +1,21 @@
 Rails.application.routes.draw do
+  # Routes for the Status_comment resource:
+  # CREATE
+  get "/status_comments/new", :controller => "status_comments", :action => "new"
+  post "/create_status_comment", :controller => "status_comments", :action => "create"
+
+  # READ
+  get "/status_comments", :controller => "status_comments", :action => "index"
+  get "/status_comments/:id", :controller => "status_comments", :action => "show"
+
+  # UPDATE
+  get "/status_comments/:id/edit", :controller => "status_comments", :action => "edit"
+  post "/update_status_comment/:id", :controller => "status_comments", :action => "update"
+
+  # DELETE
+  get "/delete_status_comment/:id", :controller => "status_comments", :action => "destroy"
+  #------------------------------
+
   # Routes for the Status_update resource:
   # CREATE
   get "/status_updates/new", :controller => "status_updates", :action => "new"
