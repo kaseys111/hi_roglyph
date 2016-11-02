@@ -20,8 +20,11 @@
         <td><%= status_update.poster.email %></td>
         <td>
           <a href="/status_updates/<%= status_update.id %>" class="btn btn-primary">Show</a>
-          <a href="/status_updates/<%= status_update.id %>/edit" class="btn btn-warning">Edit</a>
-          <a href="/delete_status_update/<%= status_update.id %>" class="btn btn-danger" rel="nofollow">Delete</a>
+          
+          <% if current_user == status_update.poster %>
+            <a href="/status_updates/<%= status_update.id %>/edit" class="btn btn-warning">Edit</a>
+            <a href="/delete_status_update/<%= status_update.id %>" class="btn btn-danger" rel="nofollow">Delete</a>
+          <% end %>
         </td>
       </tr>
       <% end %>

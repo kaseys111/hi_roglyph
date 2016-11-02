@@ -17,12 +17,14 @@
       <a href="/status_updates" class="btn btn-primary">
         Back
       </a>
-      <a href="/status_updates/<%= @status_update.id %>/edit" class="btn btn-warning">
-        Edit
-      </a>
-      <a href="/delete_status_update/<%= @status_update.id %>" class="btn btn-danger" rel="nofollow">
-        Delete
-      </a>
+      <% if current_user == @status_update.poster %>
+        <a href="/status_updates/<%= @status_update.id %>/edit" class="btn btn-warning">
+          Edit
+        </a>
+        <a href="/delete_status_update/<%= @status_update.id %>" class="btn btn-danger" rel="nofollow">
+          Delete
+        </a>
+      <% end %>
     </div>
   </div>
 </div>
