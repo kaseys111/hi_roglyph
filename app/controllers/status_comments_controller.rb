@@ -1,4 +1,14 @@
 class StatusCommentsController < ApplicationController
+  before_action :current_user_must_be_status_comment_user, :only => [:edit, :update, :destroy]
+
+  def current_user_must_be_status_comment_user
+    status_comment = StatusComment.find(params[:id])
+
+    unless current_user == status_comment.commenter
+      redirect_to :back, :alert => "You are not authorized for that."
+    end
+  end
+
   def index
     @status_comments = StatusComment.all
   end

@@ -20,12 +20,14 @@
       <a href="/status_comments" class="btn btn-primary">
         Back
       </a>
-      <a href="/status_comments/<%= @status_comment.id %>/edit" class="btn btn-warning">
-        Edit
-      </a>
-      <a href="/delete_status_comment/<%= @status_comment.id %>" class="btn btn-danger" rel="nofollow">
-        Delete
-      </a>
+      <% if current_user == @status_comment.commenter %>
+        <a href="/status_comments/<%= @status_comment.id %>/edit" class="btn btn-warning">
+          Edit
+        </a>
+        <a href="/delete_status_comment/<%= @status_comment.id %>" class="btn btn-danger" rel="nofollow">
+          Delete
+        </a>
+      <% end %>
     </div>
   </div>
 </div>
