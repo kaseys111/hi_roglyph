@@ -1,0 +1,46 @@
+<!-- Validation failure messages -->
+<% if @status_update.errors.any? %>
+  <% @status_update.errors.full_messages.each do |message| %>
+    <div class="alert alert-dismissable alert-danger">
+      <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+      <%= message %>
+    </div>
+  <% end %>
+<% end %>
+
+<div class="page-header">
+  <h3>Edit Status Update #<%= @status_update.id %></h3>
+</div>
+
+<div class="row">
+  <div class="col-md-12">
+    <form action="/update_status_update/<%= @status_update.id %>" method="post">
+      <!-- Hidden input for authenticity token to protect from forgery -->
+      <input name="authenticity_token" type="hidden" value="<%= form_authenticity_token %>">
+
+      <!-- Label and input for status -->
+      <div class="form-group">
+        <label for="status" class="control-label">
+          Status
+        </label>
+
+        <input type="text" id="status" name="status" placeholder="Status" class="form-control" value="<%= @status_update.status %>">
+      </div>
+
+      <!-- Label and input for poster_id -->
+      <div class="form-group">
+        <label for="poster_id" class="control-label">
+          Poster
+        </label>
+
+        <input type="text" id="poster_id" name="poster_id" placeholder="Poster" class="form-control" value="<%= @status_update.poster_id %>">
+      </div>
+
+      <button class="btn btn-warning">
+        Update Status Update
+      </button>
+      or
+      <a href="/status_updates/<%= @status_update.id %>">Cancel</a>
+    </form>
+  </div>
+</div>

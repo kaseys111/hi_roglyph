@@ -1,4 +1,21 @@
 Rails.application.routes.draw do
+  # Routes for the Status_update resource:
+  # CREATE
+  get "/status_updates/new", :controller => "status_updates", :action => "new"
+  post "/create_status_update", :controller => "status_updates", :action => "create"
+
+  # READ
+  get "/status_updates", :controller => "status_updates", :action => "index"
+  get "/status_updates/:id", :controller => "status_updates", :action => "show"
+
+  # UPDATE
+  get "/status_updates/:id/edit", :controller => "status_updates", :action => "edit"
+  post "/update_status_update/:id", :controller => "status_updates", :action => "update"
+
+  # DELETE
+  get "/delete_status_update/:id", :controller => "status_updates", :action => "destroy"
+  #------------------------------
+
   # Routes for the Friend_request resource:
   # CREATE
   get "/friend_requests/new", :controller => "friend_requests", :action => "new"
