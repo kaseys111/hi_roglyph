@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  root :to => "friend_requests#index"
   # Routes for the Status_comment resource:
   # CREATE
   get "/status_comments/new", :controller => "status_comments", :action => "new"
