@@ -17,7 +17,7 @@
 
       <% @status_comments.each do |status_comment| %>
       <tr>
-        <td><%= status_comment.status_id %></td>
+        <td><%= status_comment.status.status %></td>
         <td><%= status_comment.comment %></td>
         <td><%= status_comment.commenter_id %></td>
         <td>
