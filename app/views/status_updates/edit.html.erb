@@ -27,14 +27,8 @@
         <input type="text" id="status" name="status" placeholder="Status" class="form-control" value="<%= @status_update.status %>">
       </div>
 
-      <!-- Label and input for poster_id -->
-      <div class="form-group">
-        <label for="poster_id" class="control-label">
-          Poster
-        </label>
-
-        <%= select_tag(:poster_id, options_from_collection_for_select(User.all, :id, :email, @status_update.poster_id), :class => "form-control") %>
-      </div>
+      
+      
 
       <button class="btn btn-warning">
         Update Status Update
