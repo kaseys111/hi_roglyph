@@ -33,7 +33,7 @@
           Request receiver
         </label>
 
-        <input type="text" id="request_receiver_id" name="request_receiver_id" placeholder="Request receiver" class="form-control" value="<%= @friend_request.request_receiver_id %>">
+        <%= select_tag(:request_receiver_id, options_from_collection_for_select(User.all, :id, :email, @friend_request.request_receiver_id), :class => "form-control") %>
       </div>
 
       <button class="btn btn-success">
